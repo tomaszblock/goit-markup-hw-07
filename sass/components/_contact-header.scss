@@ -1,0 +1,33 @@
+.contact-header {
+  display: flex;
+
+  &--gap {
+    gap: 30px;
+  }
+  &__items {
+    font-weight: $font-weight-m;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    transition-timing-function: $transit-function-primary;
+    transition-property: color, fill;
+    transition-duration: $transit-duration-primary;
+    display: flex;
+    align-items: center;
+    color: $font-color-secondary;
+    &:focus,
+    &:hover {
+      color: $special-color-primary;
+      fill: $special-color-primary;
+    }
+    &--gap {
+      margin-right: 10px;
+      &:focus,
+      &:hover {
+        color: $special-color-primary;
+        fill: $special-color-primary;
+      }
+    }
+  }
+}

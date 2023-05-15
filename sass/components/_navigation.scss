@@ -1,0 +1,42 @@
+.nav {
+  flex-grow: 3;
+
+  &__list {
+    display: flex;
+    gap: 46px;
+    align-items: center;
+  }
+
+  &__item {
+    font-weight: $font-weight-m;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    transition-timing-function: $transit-function-primary;
+    transition-property: color, fill;
+    transition-duration: $transit-duration-primary;
+
+    &:focus,
+    &:hover {
+      color: $special-color-primary;
+    }
+
+    &--active {
+      position: relative;
+      display: flex;
+      padding: 32px 0px;
+      color: $special-color-primary;
+      &:after {
+        content: "";
+        position: absolute;
+        border-radius: 2px;
+        border: solid;
+        background-color: $special-color-primary;
+        width: 100%;
+        bottom: 0;
+        pointer-events: none;
+      }
+    }
+  }
+}
