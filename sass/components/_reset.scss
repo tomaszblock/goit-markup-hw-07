@@ -3,6 +3,9 @@ body a {
   font-family: $family-primary;
   color: $font-color-primary;
 }
+a {
+  text-decoration: none;
+}
 ul,
 p,
 h1,

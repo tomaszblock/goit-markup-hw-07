@@ -4,6 +4,9 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid $border-header-color;
+  &__logo {
+    flex-grow: 1;
+  }
 }
 .container {
   max-width: 1200px;

@@ -1,15 +1,12 @@
 .contact-header {
   display: flex;
+  gap: 30px;
 
-  &--gap {
-    gap: 30px;
-  }
   &__items {
     font-weight: $font-weight-m;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
-    text-decoration: none;
     transition-timing-function: $transit-function-primary;
     transition-property: color, fill;
     transition-duration: $transit-duration-primary;
