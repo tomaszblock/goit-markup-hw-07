@@ -1,0 +1,25 @@
+button {
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+.button {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  color: $color-white;
+  background-color: $special-color-primary;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition-timing-function: $transit-function-primary;
+  transition-property: color, box-shadow, fill;
+  transition-duration: $transit-duration-primary;
+  fill: $color-white;
+  &:hover,
+  &:focus {
+    color: $special-color-secondary;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+      rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    fill: $special-color-secondary;
+  }
+}
