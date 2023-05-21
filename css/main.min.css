@@ -12,7 +12,8 @@ ul,
 p,
 h1,
 h2,
-h3 {
+h3,
+h4 {
   margin: 0;
   padding: 0;
 }
@@ -90,6 +91,12 @@ ul {
   margin-bottom: 94px;
 }
 
+.is-hidden {
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
 h1 {
   font-weight: 900;
   font-size: 44px;
@@ -116,13 +123,18 @@ h2 {
   letter-spacing: 0.03em;
 }
 
-button {
-  border-radius: 4px;
-  border: none;
-  cursor: pointer;
+h4 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
 }
 
 .button {
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;
@@ -162,6 +174,11 @@ button {
           justify-content: space-between;
   padding-left: 42px;
   padding-right: 28px;
+}
+.button--modal {
+  width: 200px;
+  height: 50px;
+  margin-top: 20px;
 }
 
 .logo {
@@ -623,7 +640,7 @@ button {
   gap: 20px;
 }
 
-.modal-bg {
+.modal {
   position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -645,14 +662,7 @@ button {
           transition-duration: 1s;
   z-index: 1;
 }
-
-.is-hidden {
-  pointer-events: none;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.modal {
+.modal__box {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -670,30 +680,9 @@ button {
   border-radius: 4px;
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-}
-
-.modal-inner-box {
   padding: 40px;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  width: 100%;
 }
-
-.modal-inner-box form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.modal-close {
+.modal__close {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -708,17 +697,25 @@ button {
   border-color: rgba(0, 0, 0, 0.1);
   margin: 8px;
 }
-
-.modal-title {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.15;
-  text-align: center;
-  letter-spacing: 0.03em;
+.modal__title {
   margin-bottom: 12px;
 }
+.modal__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 
-.modal-label {
+.input {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -731,19 +728,16 @@ button {
   line-height: 1.17;
   letter-spacing: 0.01em;
   color: rgb(117, 117, 117);
-  margin-bottom: 10px;
   gap: 4px;
   width: 100%;
 }
-
-.modal-label input {
+.input input {
   border: none;
   height: 40px;
   width: 100%;
   border-radius: 4px;
 }
-
-.modal-label label {
+.input__label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -759,25 +753,21 @@ button {
   -webkit-transition-duration: 250ms;
           transition-duration: 250ms;
 }
-
-.modal-label label:focus-within {
-  fill: rgb(33, 150, 243);
-  border-color: rgb(33, 150, 243);
-}
-
-.modal-label label svg {
+.input__label svg {
   margin-left: 12px;
   margin-right: 12px;
 }
-
-.modal-label textarea {
+.input__label:focus-within {
+  fill: rgb(33, 150, 243);
+  border-color: rgb(33, 150, 243);
+}
+.input__label--textarea {
   resize: none;
   padding: 12px 16px;
   width: 100%;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.01em;
+  border: none;
+  outline: none;
+  border-radius: 4px;
 }
 
 .checkbox {
@@ -794,19 +784,20 @@ button {
   letter-spacing: 0.03em;
   color: rgb(117, 117, 117);
   gap: 8px;
-  padding-top: 10px;
 }
-
-.checkbox a {
-  color: rgb(33, 150, 243);
-}
-
-.checkbox-input {
+.checkbox__input {
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
 }
-
-.checkbox-label {
+.checkbox__input:checked + .checkbox__label .checkbox__border {
+  fill: rgb(255, 255, 255);
+  opacity: 1;
+}
+.checkbox__input:checked + .checkbox__label .checkbox__check {
+  fill: rgb(33, 150, 243);
+  background-color: rgb(33, 150, 243);
+}
+.checkbox__label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -815,8 +806,7 @@ button {
           align-items: center;
   cursor: pointer;
 }
-
-.checkbox-border {
+.checkbox__border {
   position: absolute;
   left: 3px;
   opacity: 0;
@@ -827,18 +817,7 @@ button {
   -webkit-transition-duration: 250ms;
           transition-duration: 250ms;
 }
-
-.checkbox-input:checked + .checkbox-label .checkbox-border {
-  fill: rgb(255, 255, 255);
-  opacity: 1;
-}
-
-.checkbox-input:checked + .checkbox-label .checkbox-check {
-  fill: rgb(33, 150, 243);
-  background-color: rgb(33, 150, 243);
-}
-
-.checkbox-check {
+.checkbox__check {
   border-radius: 2px;
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -846,4 +825,11 @@ button {
   transition-property: fill, background-color;
   -webkit-transition-duration: 250ms;
           transition-duration: 250ms;
+}
+.checkbox a {
+  color: rgb(33, 150, 243);
+  text-decoration: underline;
+}
+.checkbox--modal {
+  padding-top: 10px;
 }/*# sourceMappingURL=main.min.css.map */

@@ -23,3 +23,8 @@
   margin-top: 94px;
   margin-bottom: 94px;
 }
+.is-hidden {
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+}
