@@ -35,4 +35,28 @@
     height: 50px;
     margin-top: 20px;
   }
+  &--filter {
+    font-weight: $font-weight-m;
+    line-height: 1.62;
+    letter-spacing: 0.03em;
+    background-color: $buttons-color;
+    color: $font-color-primary;
+    padding: 6px 22px;
+    transition-duration: $transit-duration-primary;
+    transition-timing-function: $transit-function-primary;
+    transition-property: color, background-color, box-shadow;
+    &:focus,
+    &:hover {
+      color: $color-white;
+      background-color: $special-color-primary;
+      box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+        0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    }
+  }
+  &--active {
+    color: $color-white;
+    background-color: $special-color-primary;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+  }
 }

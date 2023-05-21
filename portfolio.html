@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/modern-normalize.css" />
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/main.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,34 +15,36 @@
     <title>Zadanie domowe 7</title>
   </head>
   <body>
-    <header class="header-box">
+    <header class="header">
       <div class="container">
-        <a class="logo grow-small" href="./index.html" title="WebStudio"
-          ><span class="logo-color-special">Web</span>Studio</a
+        <a class="logo header__logo" href="./index.html" title="WebStudio"
+          ><span class="logo--special">Web</span>Studio</a
         >
-        <!-- Logo-->
-
-        <nav class="grow-medium">
-          <ul class="filter-box">
-            <li><a class="header" href="./index.html">Agencja</a></li>
+        <nav class="header__nav">
+          <ul class="nav__list">
             <li>
-              <a class="header active-web" href="./portfolio.html">Portfolio</a>
+              <a class="nav__link nav__link--active" href="./index.html"
+                >Agencja</a
+              >
             </li>
-            <li><a class="header" href="/Kontakt">Kontakt</a></li>
+            <li>
+              <a class="nav__link" href="./portfolio.html">Portfolio</a>
+            </li>
+            <li><a class="nav__link" href="/Kontakt">Kontakt</a></li>
           </ul>
         </nav>
-        <ul class="header-contact-box">
+        <ul class="contact contact__header">
           <li>
-            <a class="header header-contact" href="mailto:info@devstudio.com">
-              <svg class="header-icons" width="16" height="12">
+            <a class="contact__link" href="mailto:info@devstudio.com">
+              <svg width="16" height="12">
                 <use href="./images/icons.svg#icon-envelope"></use>
               </svg>
               info@devstudio.com</a
             >
           </li>
           <li>
-            <a class="header header-contact" href="tel:+48111111111">
-              <svg class="header-icons" width="10" height="16">
+            <a class="contact__link" href="tel:+48111111111">
+              <svg width="10" height="16">
                 <use href="./images/icons.svg#icon-smartphone"></use>
               </svg>
               +48 111 111 111</a
@@ -52,33 +54,26 @@
       </div>
     </header>
     <main class="section">
-      <div class="container portfolio-main-box">
-        <ul class="button-filters-box">
+      <div class="container portfolio">
+        <ul class="filter">
           <li>
-            <button
-              class="button-filters button-filters-active button-standard"
-              type="button"
-            >
+            <button class="button button--filter button--active" type="button">
               Wszystkie
             </button>
           </li>
           <li>
-            <button class="button-filters button-standard" type="button">
-              Strony
-            </button>
+            <button class="button button--filter" type="button">Strony</button>
           </li>
           <li>
-            <button class="button-filters button-standard" type="button">
+            <button class="button button--filter" type="button">
               Aplikacje
             </button>
           </li>
           <li>
-            <button class="button-filters button-standard" type="button">
-              Dizajn
-            </button>
+            <button class="button button--filter" type="button">Dizajn</button>
           </li>
           <li>
-            <button class="button-filters button-standard" type="button">
+            <button class="button button--filter" type="button">
               Marketing
             </button>
           </li>
@@ -289,53 +284,60 @@
         </ul>
       </div>
     </main>
-    <footer class="footer-bg-box">
-      <div class="container footer-box">
-        <div class="footer-inbox">
-          <a class="logo logo-footer" href="./index.html" title="WebStudio">
-            <span class="logo-color-special">Web</span>Studio</a
+    <footer class="footer">
+      <div class="container footer__primary-list">
+        <div class="footer__secondary-list">
+          <a class="logo logo--secondary" href="./index.html" title="WebStudio">
+            <span class="logo--special">Web</span>Studio</a
           >
-          <!-- Logo-->
-          <address class="footer-address-box">
-            <p class="footer-contact">m. Warszawa, Aleje Jerozolimskie 21</p>
-            <a
-              class="footer-contact footer-contact-alpha"
-              href="mailto:info@example.com"
+          <address class="address">
+            <p>m. Warszawa, Aleje Jerozolimskie 21</p>
+            <a class="footer-contact" href="mailto:info@example.com"
               >info@example.com</a
             >
-            <a
-              class="footer-contact footer-contact-alpha"
-              href="tel:+48111111111"
+            <a class="footer-contact" href="tel:+48111111111"
               >+48 111 111 111</a
             >
           </address>
         </div>
-        <div class="footer-joinus-box">
+        <div class="joinus">
           <span class="footer-title">DOŁĄCZ DO NAS</span>
-          <ul class="footer-media-icon-box">
+          <ul class="icons">
             <li>
-              <a class="footer-media-icon" href="/instagram">
+              <a
+                class="icons__position icons__position--joinus"
+                href="/instagram"
+              >
                 <svg width="20" height="20">
                   <use href="./images/icons.svg#icon-instagram"></use>
                 </svg>
               </a>
             </li>
             <li>
-              <a class="footer-media-icon" href="/twitter">
+              <a
+                class="icons__position icons__position--joinus"
+                href="/twitter"
+              >
                 <svg width="20" height="20">
                   <use href="./images/icons.svg#icon-twitter"></use>
                 </svg>
               </a>
             </li>
             <li>
-              <a class="footer-media-icon" href="/facebook">
+              <a
+                class="icons__position icons__position--joinus"
+                href="/facebook"
+              >
                 <svg width="20" height="20">
                   <use href="./images/icons.svg#icon-facebook"></use>
                 </svg>
               </a>
             </li>
             <li>
-              <a class="footer-media-icon" href="/linkedin">
+              <a
+                class="icons__position icons__position--joinus"
+                href="/linkedin"
+              >
                 <svg width="20" height="20">
                   <use href="./images/icons.svg#icon-linkedin"></use>
                 </svg>
@@ -343,17 +345,14 @@
             </li>
           </ul>
         </div>
-        <form class="footer-news">
+        <form class="newsletter newsletter--position">
           <div>
-            <label class="footer-news-label footer-title">
+            <label class="newsletter__label">
               ZAPISZ SIĘ DO NEWSLETTERA
               <input type="email" placeholder="E-mial" name="emailnews" />
             </label>
           </div>
-          <button
-            type="submit"
-            class="button-primary button-standard footer-news-button"
-          >
+          <button type="submit" class="button button--newsletter">
             Zapisz się
             <svg width="24" height="24">
               <use href="./images/icons.svg#icon-send"></use>
