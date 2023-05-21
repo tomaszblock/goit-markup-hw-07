@@ -97,16 +97,6 @@ ul {
   opacity: 0;
 }
 
-.portfolio {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin-top: 94px;
-  margin-bottom: 94px;
-  gap: 50px;
-}
-
 h1 {
   font-weight: 900;
   font-size: 44px;
@@ -872,10 +862,82 @@ h4 {
   padding-top: 10px;
 }
 
-.filter {
+.product {
+  display: inline-block;
+}
+.product__overlay-box {
+  position: relative;
+  overflow: hidden;
+}
+.product__overlay {
+  position: absolute;
+  background-color: rgba(33, 150, 243, 0.9);
+  opacity: 0.5;
+  height: 100%;
+  width: 100%;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  opacity: 0;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, -webkit-transform;
+  transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
+  padding: 49px 45px 49px 24px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: rgb(255, 255, 255);
+}
+.product:hover .product__overlay-box .product__overlay {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1;
+}
+.product__card {
+  padding: 20px 24px 20px 24px;
+  border-bottom: 1px solid rgb(238, 238, 238);
+  border-right: 1px solid rgb(238, 238, 238);
+  border-left: 1px solid rgb(238, 238, 238);
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.03em;
+  color: rgb(117, 117, 117);
+}
+.product__card--bold {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  color: rgb(33, 33, 33);
+}
+
+.portfolio {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 94px;
+  margin-bottom: 94px;
+  gap: 50px;
+}
+.portfolio__filter {
   margin-bottom: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 8px;
+}
+.portfolio__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 34px;
 }/*# sourceMappingURL=main.min.css.map */
