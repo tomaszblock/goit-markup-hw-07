@@ -42,6 +42,7 @@
     background-color: $buttons-color;
     color: $font-color-primary;
     padding: 6px 22px;
+    box-shadow: none;
     transition-duration: $transit-duration-primary;
     transition-timing-function: $transit-function-primary;
     transition-property: color, background-color, box-shadow;
